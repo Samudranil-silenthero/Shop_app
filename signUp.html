@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/flaticon.css"> 
+        <script src="https://use.fontawesome.com/67912d8e88.js"></script>
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/signUp.css">
+        <title>form</title>
+    </head> 
+    
+    <body>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> 
+        <link rel="stylesheet" href="/css/navbar.css">
+
+        <nav class="navbar smart-scroll navbar-expand-lg navbar-light bg-transparent ">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./image/logo.PNG" style="height:2em;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Explore</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-nav ml-auto collapse navbar-collapse" id="navbarNav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign-In</a>
+                </li>
+            </div>
+            </div>
+        </nav>
+    <form name="myForm" action="#" onsubmit="return validateForm()" method="post">
+       <div class="d1">
+           <div class="f_title"> Create New Account </div>
+           <div class="f_body">
+               <div class="inp">
+                    <label for="fname">First name:</label>
+                    <input type="text" name="fname">
+                    <span id="error1"></span>
+               </div>
+               <div class="inp">
+                    <label for="lname">Last name:</label>
+                    <input type="text" name="lname">
+                    <span id="error2"></span>
+               </div>
+                <div class="inp">
+                    <label for="email">Email Id:</label>
+                    <input type="text" name="email">
+                    <span id="error3"></span>
+                </div>
+                <div class="inp">
+                    <label for="password">Password:</label>
+                    <!-- <input type="password" name="pass">  -->
+                    <input type="password"  name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
+                </div>
+                
+                 <div style="display: inline-block; margin-top: 15px;">
+                    <input style="vertical-align: middle" type="checkbox" checked="checked" id="chk1"/>
+                    <span style="vertical-align: middle">
+                        I accept all <big>Terms and conditions</big>
+                    </span>
+                </div>
+               <div class="inp">
+                 <button type="submit">SignUp</button>
+               </div>
+               
+           </div>
+       </div>
+    </form>   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/67912d8e88.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/js/home.js"></script>
+        <footer style="background-color: rgb(90, 128, 0);" class="page-footer font-small">
+            <div class="footer-copyright text-center py-3 ">© 2021 Copyright:
+                <a style="color: white;" href="#"> ShopBook.com</a>
+            </div>    
+        </footer>
+
+        <script>
+            function validateForm() {
+                var fname = document.forms["myForm"]["fname"].value;
+                if (fname == "") {
+                    alert("First name must be filled out");
+                    document.myForm.fname.focus() ;
+                    return false;
+                }
+                var lname = document.forms["myForm"]["lname"].value;
+                if (lname == "") {
+                    alert("Last name must be filled out");
+                    document.myForm.lname.focus() ;
+                    return false;
+                }
+                var email = document.myForm.email.value;
+                atpos = email.indexOf("@");
+                dotpos = email.lastIndexOf(".");
+                if (atpos < 1 || ( dotpos - atpos < 2 )) {
+                    alert("Please enter correct email ID")
+                    document.myForm.email.focus() ;
+                    return false;
+                }
+                var chk1 = document.getElementById("chk1");
+                if (chk1.checked  == false ){
+                    alert("Pls accept our terms nd conditions");
+                    return false;
+                }
+            }
+            
+
+            
+            
+        </script>
+    </body>
+    
+
+</html>
